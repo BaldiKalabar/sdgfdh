@@ -1,10 +1,11 @@
 import pyautogui,time,keyboard,random, webbrowser
+from tkinter import *
 a=open('Adcivmen.txt','w')
 pobeda=input('это 2 часть моей игры тут больше фишек ну и сюжет ВНИМАНИЕ СКРИМЕРЫ  (Start)').lower()
 while pobeda !='start':
     pobeda=input('start')
 p1=0
-
+p=0
 while pobeda != 1:
     print()
     print('В прошлой часте ......')
@@ -80,14 +81,51 @@ while pobeda != 1:
         exit(0)
     if p1=='пойти спать':
         print('ZzzZzzZ')
+    time.sleep(3)
+    print('???-Доброе утро')
     time.sleep(1)
-    print('???-Доброе утро,как дела??')
+    print('Ладно давай продолжим изучать местность').lower()
     time.sleep(1)
-    print('???-кстати забыл представится я')
+    p1=input('Куда пойдём (Направо)......(Налево)').lower()
+    while p1 !='Направо':
+        p1=input('Куда пойдём (Направо)')
+    print('Хорошо')
+    time.sleep(2)
+    print('.Вы находите касету.')
     time.sleep(1)
-    print('Дима-меня зовут Дима ну лучьше называй так меня')
+    p1=input('Расказать ли новому другу о ней   (ДА ).....(Нет)').lower()
+    while p1 !='нет':
+        p1=input('Расказать ли новому другу о ней   (АД ).....(Нет)').lower()
+    print('.Недоверие вот что губит человека.')
     time.sleep(1)
+    print('???-Хей Тут ничего нет пошли домой')
+    time.sleep(3)
+    p1=input('Вы видете Дисковод (Касета).....(уйти).....(XXX)').lower()
+    while p1 != 'касета' and p1 != 'уйти':
+        p1=input('Вы видете Дисковод (Касета).....(уйти).....(XXX)').lower()
+    if p1 == 'касета':
+        webbrowser.open('https://www.youtube.com/watch?v=53ypZDInUVs', new=2)
+        time.sleep(43)
+    if p1 == 'уйти':
+        print('Вы просто ушли....')
+    time.sleep(1)
+    print('???-О привет мы ещё не ходили по левой стороне ну тогда пошли инаяе ты умреш)')
+    time.sleep(1)
+    print('Хмм тут кнопка')
+    window = Tk()
+    window.title('Кнопка')
+    window.geometry('400x250')
+    window.mainloop()
+    lbl=Laber(window, text='Выбор',fount=('Arial Bold',500))
+    lbl.pack()
+    time.sleep(3)
+    print('???-Странно но тут ничего нет ')
+    p1=input('???-о смотри коробка (Посмотреть)....(Несмотреть)').lower()
+    while p1 !='посмотреть ' and p1 !='несмотреть':
+        p1=input('???-о смотри коробка (Посмотреть)....(Несмотреть)').lower()
+    if p1 == 'посмотреть':
+        
+    
+        
+    
 a.close()
-
-    
-    
