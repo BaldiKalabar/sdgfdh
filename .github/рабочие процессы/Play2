@@ -1,7 +1,7 @@
 import pyautogui,time,keyboard,random, webbrowser
 from tkinter import *
 a=open('Adcivmen.txt','w')
-pobeda=input('это 2 часть моей игры тут больше фишек ну и сюжет ВНИМАНИЕ СКРИМЕРЫ  (Start)').lower()
+pobeda=input('Привет Это Моя 2 часть игры\nПройди 1 часть что бы лучьше понять сюжет\nВНИМАНИЕ В ЭТОЙ ИГРЕ ЕСТЬ СКРИМЕРЫ\nА ТАК ЖЕ ТУТ 3 КОНЦОВКИ ну найди их всех\n кстати тут есть видосы пожалуста смотрите их всех\n(Start)').lower()
 while pobeda !='start':
     pobeda=input('start')
 p1=0
@@ -40,7 +40,7 @@ while pobeda != 1:
     if p1=='нет':
         print('ну окей')
     time.sleep(1)
-    p1=input('???-кстати ты ведь знаеш про МЯУКРОЛА?(Ты о ком)...(Нет)').lower()
+    p1=input('???-кстати ты ведь знаеш про МЯУКРОЛА?-+(Ты о ком)...(Нет)').lower()
     while p1 !='ты о ком':
         p1=input('???-кстати ты ведь знаеш про МЯУКРОЛА?(Ты о ком)').lower()
     print('???-ну короче слышишь звук мяуканья прячся')
@@ -61,13 +61,13 @@ while pobeda != 1:
         print('МЯУ МЯУУУУУУУУУУУУУУУУУУУУУУ')
         a.write('Мяу Мяу Мяу(Достижение)')
         a.close()
-    print('выходим из шкафа')
+    print('выходим из шкафа_+_')
     time.sleep(1)
     print('???-хех тут нечести больше чем наверху')
     time.sleep(1)
     print('Кстати мы возле моего дома')
     time.sleep(1)
-    p1=('(Пойти спать)(Посмотреть что в шкафу )(Посмотреть ужастик)').lower()
+    p1=input('что будем делать (Пойти спать)(Посмотреть что в шкафу )(Посмотреть ужастик)').lower()
     while p1 !='пойти спать' and p1 !='посмотреть что в шкафу' and p1 !='посмотреть ужастик':
         p1=('(Пойти спать)(Посмотреть что в шкафу )(Посмотреть ужастик)').lower()
     if p1=='посмотреть что в шкафу':
@@ -84,7 +84,7 @@ while pobeda != 1:
     time.sleep(3)
     print('???-Доброе утро')
     time.sleep(1)
-    print('Ладно давай продолжим изучать местность').lower()
+    print('Ладно давай продолжим изучать местность')
     time.sleep(1)
     p1=input('Куда пойдём (Направо)......(Налево)').lower()
     while p1 !='Направо':
@@ -116,8 +116,6 @@ while pobeda != 1:
     window.title('Кнопка')
     window.geometry('400x250')
     window.mainloop()
-    lbl=Laber(window, text='Выбор',fount=('Arial Bold',500))
-    lbl.pack()
     time.sleep(3)
     print('???-Странно но тут ничего нет ')
     p1=input('???-о смотри коробка (Посмотреть)....(Несмотреть)').lower()
@@ -140,7 +138,7 @@ while pobeda != 1:
     time.sleep(1)
     print('ОГо ту код но какой он')
     time.sleep(1)
-    p1=('Ладно мы сейчас безсильны (Пошли) (Проверить код)').lower()
+    p1=('Ладно мы сейчас безсильны  (Пошли) (Проверить код)').lower()
     while p1 != 'пошли' and p1 != 'проверить код':
         p1=('Ладно мы сейчас безсильны (Пошли) (Проверить код)').lower()
     if p1 == 'пошли':
@@ -157,6 +155,11 @@ while pobeda != 1:
                         print('Эт0 не т0 чт0 над0')
                         time.sleep(1)
                         exit(0)
+    if p1 ==19690:
+        webbrowser.open('https://www.youtube.com/watch?v=Ho58TN0aY-c ', new=2)
+        a.write('Конец??(Достижение)')
+        a.close()
+        exit(0)
     time.sleep(1)
     print('Нашли  записку')
     time.sleep(1)
@@ -185,6 +188,53 @@ while pobeda != 1:
         time.sleep(1)
         print('каждый умирает, каждый начинает сначало ')
         time.sleep(1)
-    print('')
-        
+    print('???-хорошо теперь надо идти дальше -+')
+    time.sleep(1)
+    p1=input('???-Кстати какой твой любимый цвет?').lower()
+    if p1 == 'балди':
+        webbrowser.open('https://www.youtube.com/watch?v=uSTqDGTfO78', new=2)
+        a.write('???-Секретная (Достижение)')
+        a.close()
+        exit(0)
+    print('???-хм прикольно')
+    time.sleep(1)
+    print('???-О скоро мы выйдим')
+    time.sleep(1)
+    print('но....')
+    time.sleep(1)
+    print('???-Твоюж налево стену завалило')
+    time.sleep(1)
+    print('придёться искать код что бы выйти отсюда')
+    while p1 !='проверить код':
+        p1=input('???-океей давай посмотри там я посмотрю в другом месте....(хорошо)').lower()
+        while p1 !='хорошо':
+            p1=input('???-океей давай посмотри там я посмотрю в другом месте....(хорошо)').lower()
+        print('Вы находите труп ммм мило:)')
+        time.sleep(1)
+        print('Находите цифпу 1')
+        time.sleep(1)
+        p1=input('???-О я видимо нашёл код вводи 666..(проверить код)').lower()
+        if p1 == 'проверить код':
+        while p1 !=19690:
+            p1=int(input('Код:'))
+            if p1 != 19690:
+                if p1 == 666:
+                    print('ЗРЯ ТЫ ЭТО СДЕЛАЛ:)')
+                    a.write('Плохая концовка(Достижение)')
+                    a.close()
+                    webbrowser.open('https://www.google.com/search?q=%D0%9B%D0%B8%D1%86%D0%BE+%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D0%B0&newwindow=1&source=lnms&tbm=isch&sa=X&ved=2ahUKEwit4_XHgfL-AhUDksMKHfhzDMkQ_AUoAXoECAEQAw&biw=1536&bih=754&dpr=1.25#imgrc=peGx7hWjC4kLJM', new=2)
+                    exit(0)
+                p1=int(input('Код НЕВЕРНЫЙ'))
+                if p1 != 19690:
+                    if p1 == 666:
+                    print('ЗРЯ ТЫ ЭТО СДЕЛАЛ:)')
+                    a.write('Плохая концовка(Достижение)')
+                    a.close()
+                    webbrowser.open('https://www.google.com/search?q=%D0%9B%D0%B8%D1%86%D0%BE+%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D0%B0&newwindow=1&source=lnms&tbm=isch&sa=X&ved=2ahUKEwit4_XHgfL-AhUDksMKHfhzDMkQ_AUoAXoECAEQAw&biw=1536&bih=754&dpr=1.25#imgrc=peGx7hWjC4kLJM', new=2)
+                    exit(0)
+                    p1=int(input('Это последний шанс'))
+                    if p1 != 19690:
+                        print('Эт0 не т0 чт0 над0')
+                        time.sleep(1)
+                        exit(0)
 a.close()
