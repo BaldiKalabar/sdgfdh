@@ -1,13 +1,25 @@
-import pyautogui,time,keyboard,random, webbrowser
+import pyautogui,time,keyboard,random, webbrowser , pygame
 from tkinter import *
+pygame.init()
+#секрет файл
 a=open('Adcivmen.txt','w')
+#Музыка главного экрана
+s = pygame.mixer.Sound("Fight.ogg")
+#главный экран
+s.play(loops=0, maxtime=0, fade_ms=0) 
 pobeda=input('Привет Это Моя 2 часть игры\nПройди 1 часть что бы лучьше понять сюжет\nВНИМАНИЕ В ЭТОЙ ИГРЕ ЕСТЬ СКРИМЕРЫ\nА ТАК ЖЕ ТУТ 3 КОНЦОВКИ ну найди их всех\n кстати тут есть видосы пожалуста смотрите их всех\n(Start)').lower()
 while pobeda !='start':
     pobeda=input('start')
 p1=0
 p=0
+#начало
 while pobeda != 1:
-    print()
+    s.stop()
+    #Музыка фоновая
+    ss = pygame.mixer.Sound("s.ogg")
+    f = pygame.mixer.Sound("Fon.ogg")
+    f.play(loops=0, maxtime=0, fade_ms=0)
+    #игра
     print('В прошлой часте ......')
     time.sleep(1)
     print('100 дверь')
@@ -30,6 +42,7 @@ while pobeda != 1:
     while p1 != 'хорошо' and p1!='нет':
         p1=input('(хорошо).....(нет)').lower()
     if p1=='хорошо':
+        f.stop()
         webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', new=2)
         print('RICROLL')
         time.sleep(1)
@@ -44,6 +57,7 @@ while pobeda != 1:
     while p1 !='ты о ком':
         p1=input('???-кстати ты ведь знаеш про МЯУКРОЛА?(Ты о ком)').lower()
     print('???-ну короче слышишь звук мяуканья прячся')
+    f.stop()
     webbrowser.open('https://www.youtube.com/watch?v=jTEN0bngTFM', new=2)
     p1=input('???-Окееей я сейчас(Хорошо).....(Прячемся)').lower()
     while p1 !='хорошо' and p1 !='прячемся':
@@ -51,6 +65,7 @@ while pobeda != 1:
         while p1 !='хорошо' and p1 !='прячемся':
             webbrowser.open('https://www.youtube.com/watch?v=hvL1339luv0', new=2)
     if p1=='хорошо':
+        ss.play(loops=0, maxtime=0, fade_ms=0)
         webbrowser.open('https://www.youtube.com/watch?v=hvL1339luv0', new=2)
         time.sleep(1)
         print('МЯУ ММЯУ')
@@ -61,10 +76,13 @@ while pobeda != 1:
         print('МЯУ МЯУУУУУУУУУУУУУУУУУУУУУУ')
         a.write('Мяу Мяу Мяу(Достижение)')
         a.close()
+    
     print('выходим из шкафа_+_')
     time.sleep(1)
     print('???-хех тут нечести больше чем наверху')
     time.sleep(1)
+    fp = pygame.mixer.Sound("FonPod.ogg")
+    fp.play(loops=0, maxtime=0, fade_ms=0)
     print('Кстати мы возле моего дома')
     time.sleep(1)
     p1=input('что будем делать (Пойти спать)(Посмотреть что в шкафу )(Посмотреть ужастик)').lower()
@@ -77,6 +95,7 @@ while pobeda != 1:
     if p1=='посмотреть ужастик':
         webbrowser.open('https://www.youtube.com/watch?v=qnVbe1tP5c0', new=2)
         a.write('3-СТРАШНО ОЧЕНЬ СТРАШНО(Достижение)')
+        fp.stop()
         a.close()
         exit(0)
     if p1=='пойти спать':
@@ -87,7 +106,7 @@ while pobeda != 1:
     print('Ладно давай продолжим изучать местность')
     time.sleep(1)
     p1=input('Куда пойдём (Направо)......(Налево)').lower()
-    while p1 !='Направо':
+    while p1 !='направо':
         p1=input('Куда пойдём (Направо)')
     print('Хорошо')
     time.sleep(2)
@@ -104,8 +123,10 @@ while pobeda != 1:
     while p1 != 'касета' and p1 != 'уйти':
         p1=input('Вы видете Дисковод (Касета).....(уйти).....(XXX)').lower()
     if p1 == 'касета':
+        fp.stop()
         webbrowser.open('https://www.youtube.com/watch?v=53ypZDInUVs', new=2)
         time.sleep(43)
+        fp.play()
     if p1 == 'уйти':
         print('Вы просто ушли....')
     time.sleep(1)
@@ -124,6 +145,7 @@ while pobeda != 1:
     if p1== 'посмотреть ':
         print('Hhi?')
         a.write('Удали,Удали эту игру убери эту программу незнаю но почему то начелись вылеты и ошибки которые №";";";№!№')
+        fp.stop()
         a.close()
         exit(0)
     if p1=='несмотреть':
@@ -133,17 +155,17 @@ while pobeda != 1:
     p1=input('я думаю что ты понимаеш что пора идти _(YFGHFDJ)(налево)')
     while p1 !='налево':
         p1=input('я думаю что ты понимаеш что пора идти _(YFGHFDJ)(налево)')
-    
     print('Пройдя пару метров и после пряток с монстрами находим дверь с замком и кодом')
     time.sleep(1)
     print('ОГо ту код но какой он')
     time.sleep(1)
-    p1=('Ладно мы сейчас безсильны  (Пошли) (Проверить код)').lower()
+    p1=input('Ладно мы сейчас безсильны  (Пошли) (Проверить код)').lower()
     while p1 != 'пошли' and p1 != 'проверить код':
-        p1=('Ладно мы сейчас безсильны (Пошли) (Проверить код)').lower()
+        p1=input('Ладно мы сейчас безсильны (Пошли) (Проверить код)').lower()
     if p1 == 'пошли':
         print('??? - ну хорошо')
     if p1 == 'проверить код':
+        fp.stop()
         while p1 !=19690:
             print('???- Вау а откуда ты это знаеш?')
             p1=int(input('Код:'))
@@ -152,6 +174,7 @@ while pobeda != 1:
                 if p1 != 19690:
                     p1=int(input('Это последний шанс'))
                     if p1 != 19690:
+                        ss.play(loops=0, maxtime=0, fade_ms=0)
                         print('Эт0 не т0 чт0 над0')
                         time.sleep(1)
                         exit(0)
@@ -181,6 +204,8 @@ while pobeda != 1:
             print('окей вот твоя запись  ')
             a.write('День 25 сегондя я видел цифры на стене 9 и 6 может быть надомной 9 прикалываеться мой друг но он говорит что не чего не делал ')
         if s1 == 2:
+            ss.play(loops=0, maxtime=0, fade_ms=0)
+            fp.stop()
             print(':)')
             exit(0)
     if p1 == 'хорошо':
@@ -192,6 +217,7 @@ while pobeda != 1:
     time.sleep(1)
     p1=input('???-Кстати какой твой любимый цвет?').lower()
     if p1 == 'балди':
+        fp.stop()
         webbrowser.open('https://www.youtube.com/watch?v=uSTqDGTfO78', new=2)
         a.write('???-Секретная (Достижение)')
         a.close()
@@ -215,26 +241,31 @@ while pobeda != 1:
         time.sleep(1)
         p1=input('???-О я видимо нашёл код вводи 666..(проверить код)').lower()
         if p1 == 'проверить код':
-        while p1 !=19690:
-            p1=int(input('Код:'))
-            if p1 != 19690:
-                if p1 == 666:
-                    print('ЗРЯ ТЫ ЭТО СДЕЛАЛ:)')
-                    a.write('Плохая концовка(Достижение)')
-                    a.close()
-                    webbrowser.open('https://www.google.com/search?q=%D0%9B%D0%B8%D1%86%D0%BE+%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D0%B0&newwindow=1&source=lnms&tbm=isch&sa=X&ved=2ahUKEwit4_XHgfL-AhUDksMKHfhzDMkQ_AUoAXoECAEQAw&biw=1536&bih=754&dpr=1.25#imgrc=peGx7hWjC4kLJM', new=2)
-                    exit(0)
+            while p1 !=19690:
+                p1=int(input('Код:'))
+                if p1 != 19690:
+                    if p1 == 666:
+                        fp.stop()
+                        ss.play(loops=0, maxtime=0, fade_ms=0)
+                        print('ЗРЯ ТЫ ЭТО СДЕЛАЛ')
+                        a.write('Плохая концовка(Достижение)')
+                        a.close()
+                        webbrowser.open('https://www.google.com/search?q=%D0%9B%D0%B8%D1%86%D0%BE+%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D0%B0&newwindow=1&source=lnms&tbm=isch&sa=X&ved=2ahUKEwit4_XHgfL-AhUDksMKHfhzDMkQ_AUoAXoECAEQAw&biw=1536&bih=754&dpr=1.25#imgrc=peGx7hWjC4kLJM', new=2)
+                        exit(0)
                 p1=int(input('Код НЕВЕРНЫЙ'))
                 if p1 != 19690:
                     if p1 == 666:
-                    print('ЗРЯ ТЫ ЭТО СДЕЛАЛ:)')
-                    a.write('Плохая концовка(Достижение)')
-                    a.close()
-                    webbrowser.open('https://www.google.com/search?q=%D0%9B%D0%B8%D1%86%D0%BE+%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D0%B0&newwindow=1&source=lnms&tbm=isch&sa=X&ved=2ahUKEwit4_XHgfL-AhUDksMKHfhzDMkQ_AUoAXoECAEQAw&biw=1536&bih=754&dpr=1.25#imgrc=peGx7hWjC4kLJM', new=2)
-                    exit(0)
+                        fp.stop()
+                        print('ЗРЯ ТЫ ЭТО СДЕЛАЛ:)')
+                        a.write('Плохая концовка(Достижение)')
+                        a.close()
+                        webbrowser.open('https://www.google.com/search?q=%D0%9B%D0%B8%D1%86%D0%BE+%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D0%B0&newwindow=1&source=lnms&tbm=isch&sa=X&ved=2ahUKEwit4_XHgfL-AhUDksMKHfhzDMkQ_AUoAXoECAEQAw&biw=1536&bih=754&dpr=1.25#imgrc=peGx7hWjC4kLJM', new=2)
+                        exit(0)
                     p1=int(input('Это последний шанс'))
                     if p1 != 19690:
+                        fp.stop()
                         print('Эт0 не т0 чт0 над0')
                         time.sleep(1)
                         exit(0)
+fp.stop()
 a.close()
