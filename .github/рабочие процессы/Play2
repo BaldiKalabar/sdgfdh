@@ -6,16 +6,24 @@ a=open('Adcivmen.txt','w')
 #Музыка главного экрана
 
 s = pygame.mixer.Sound("Fight.ogg")
+qq= pygame.mixer.Sound("173827.ogg")
 #главный экран
 s.play(loops=0, maxtime=0, fade_ms=0) 
 pobeda=input('Привет Это Моя 2 часть игры\nПройди 1 часть что бы лучьше понять сюжет\nВНИМАНИЕ В ЭТОЙ ИГРЕ ЕСТЬ СКРИМЕРЫ\nА ТАК ЖЕ ТУТ 3 КОНЦОВКИ ну найди их всех\n кстати тут есть видосы пожалуста смотрите их всех\n(Start)').lower()
-while pobeda !='start':
+while pobeda !='start' and pobeda !='lol':
     pobeda=input('start')
+if pobeda == 'lol':
+    print('Хех')
+    qq.play(loops=0, maxtime=0, fade_ms=0) 
+    s.stop()
+    while pobeda !='Survive The Internet':
+        pobeda=input('Survive The Internet')
 p1=0
 p=0
 #начало
 while pobeda != 1:
     s.stop()
+    qq.stop()
     #Музыка фоновая
     ss = pygame.mixer.Sound("s.ogg")
     f = pygame.mixer.Sound("Fon.ogg")
@@ -239,7 +247,7 @@ while pobeda != 1:
             p1=input('???-океей давай посмотри там я посмотрю в другом месте....(хорошо)').lower()
         print('Вы находите труп ммм мило:)')
         time.sleep(1)
-        print('Находите цифпу 1')
+        print('Находите цифру 1')
         time.sleep(1)
         p1=input('???-О я видимо нашёл код вводи 666..(проверить код)').lower()
         if p1 == 'проверить код':
@@ -269,5 +277,6 @@ while pobeda != 1:
                         print('Эт0 не т0 чт0 над0')
                         time.sleep(1)
                         exit(0)
+
 fp.stop()
 a.close()
