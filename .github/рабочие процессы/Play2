@@ -4,6 +4,7 @@ pygame.init()
 #секрет файл
 a=open('Adcivmen.txt','w')
 #Музыка главного экрана
+
 s = pygame.mixer.Sound("Fight.ogg")
 #главный экран
 s.play(loops=0, maxtime=0, fade_ms=0) 
@@ -139,12 +140,13 @@ while pobeda != 1:
     window.mainloop()
     time.sleep(3)
     print('???-Странно но тут ничего нет ')
-    p1=input('???-о смотри коробка (Посмотреть)....(Несмотреть)').lower()
+    p1=input('???-о смотри коробка (посмотреть)....(Несмотреть)').lower()
     while p1 !='посмотреть ' and p1 !='несмотреть':
-        p1=input('???-о смотри коробка (Посмотреть)....(Несмотреть)').lower()
+        p1=input('???-о смотри коробка (посмотреть)....(Несмотреть)').lower()
     if p1== 'посмотреть ':
         print('Hhi?')
         a.write('Удали,Удали эту игру убери эту программу незнаю но почему то начелись вылеты и ошибки которые №";";";№!№')
+        ss.play(loops=0, maxtime=0, fade_ms=0)
         fp.stop()
         a.close()
         exit(0)
@@ -250,7 +252,6 @@ while pobeda != 1:
                         print('ЗРЯ ТЫ ЭТО СДЕЛАЛ')
                         a.write('Плохая концовка(Достижение)')
                         a.close()
-                        webbrowser.open('https://www.youtube.com/watch?v=9ftxAA7Eqo8', new=2)
                         exit(0)
                 p1=int(input('Код НЕВЕРНЫЙ'))
                 if p1 != 19690:
@@ -259,10 +260,11 @@ while pobeda != 1:
                         print('ЗРЯ ТЫ ЭТО СДЕЛАЛ:)')
                         a.write('Плохая концовка(Достижение)')
                         a.close()
-                        webbrowser.open('https://www.youtube.com/watch?v=9ftxAA7Eqo8', new=2)
+                        ss.play(loops=0, maxtime=0, fade_ms=0)
                         exit(0)
                     p1=int(input('Это последний шанс'))
                     if p1 != 19690:
+                        ss.play(loops=0, maxtime=0, fade_ms=0)
                         fp.stop()
                         print('Эт0 не т0 чт0 над0')
                         time.sleep(1)
